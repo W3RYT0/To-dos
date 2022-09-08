@@ -16,9 +16,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categoories = Category::all();
+        $categories = Category::all();
 
-        return view('categories.index', ['categories' => $categoories]);
+        return view('categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -62,8 +62,8 @@ class CategoriesController extends Controller
      */
     public function show($category)
     {
-        $categor = Category::find($category);
-        return view('categories.show', ['category' => $categor]);
+        $category = Category::find($category);
+        return view('categories.show', ['category' => $category]);
     }
 
     /**
@@ -86,7 +86,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $category)
     {
-        $category = Category::find($category);
+        $category        = Category::find($category);
         $category->name  = $request->name;
         $category->color = $request->color;
         $category->save();
